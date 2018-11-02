@@ -1,0 +1,90 @@
+html,body {
+  height:100vh;
+}
+body {
+  display: flex;
+  flex-direction:column;
+  width:100%;background:#F9D8AD;
+}
+
+.container {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column !important;
+}
+.display {
+  width: 400px;
+}
+
+#scene ul {
+  display: flex;
+  list-style: none;
+}
+#scene ul li a {
+  text-decoration: none;
+  padding: 20px 25px;
+  font-size: 1.5em;
+  border: 3px solid #262626;
+  background-color: #262626;
+  margin: 0 5px;
+  color: #fff;
+}
+.polyhead{max-width: 100%;}
+
+.polyhead polygon {
+  opacity: 0;
+}
+.polyhead {
+  height: 400px;
+  transition: 1s;
+  animation: drive 4s ease-in-out infinite;
+  animation-direction: alternate-reverse
+  
+}
+.polyhead > polygon .no-cssanimations {
+    transform: scale(1);
+    opacity: 1;
+
+}
+
+@keyframes drive {
+  0% {
+    transform: translateX(-200px);
+  }
+  100%{
+    transform: translateX(400px);
+  }
+}
+
+.polyhead:hover {
+  transform: translateX(100px);
+}
+
+.scene-nav {
+  margin-top: -200px
+}
+
+a:after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+  background-color: #351435;
+  transform: translateY(100%);
+  transition: all 1s;
+}
+
+a:hover:after{
+  transform: translateX(0);
+}
+
+a:hover {
+  color: #000;
+  background-color: #fff;
+  border-radius: 10px;
+}
